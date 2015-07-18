@@ -7,10 +7,16 @@ In this post I wanna share some **R** tricks on correctly specifying the dimensi
 
 {% highlight js %}
 n <- 5; p <- 3
+
 group <- c(1,1,2,3,3)
+
 X <- matrix(rnorm(n*p),n,p)
+
 tXX <- array(0,c(p,p,3))
+
 for (k in 1:3){
+
   tXX[,,k] <- t(X[group==k,])%*%X[group==k,]
+
 }
 {% endhighlight %}
